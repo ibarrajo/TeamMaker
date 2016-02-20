@@ -1,0 +1,37 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="page-header">Build your next project.</h1>
+    </div>
+  </div>
+
+  <form>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="projectName">Project Name</label>
+          <input type="email" class="form-control" id="projectName" placeholder="My Awesome Project">
+        </div>
+      </div>
+    </div>
+
+    <div class="row well" id="editor">
+      <div class="col-md-6">
+          <textarea class="form-control" rows="50" v-model="input" debounce="200"></textarea>
+      </div>
+      <div class="col-md-6 ">
+        <div v-html="input | marked"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+      </div>
+    </div>
+
+
+  </form>
+
+</div>
