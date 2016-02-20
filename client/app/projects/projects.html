@@ -33,59 +33,35 @@
     </div>
 
     <div class="col-md-10">
-      <div class="row">
+      <div class="row" ng-repeat="project in projectList">
         <div class="col-md-12">
           <div class="panel panel-default">
-            <div class="panel-heading">My Awesome Project</div>
+            <div class="panel-heading">{{project.projectName}}</div>
             <div class="panel-body">
               <div class="col-md-4">
                 <a href="#" class="thumbnail">
-                  <img src="http://placehold.it/300x200" alt="...">
+                  <img src="{{project.mainImage}}" alt="...">
                 </a>
               </div>
               <div class="col-md-8">
-                <div class="row well">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida enim in mi lacinia dapibus. Mauris in commodo arcu. Vestibulum interdum diam in ex malesuada, sit amet facilisis diam facilisis. Donec scelerisque nulla quis elit euismod gravida. Suspendisse ac pulvinar leo</div>
+                <div class="row well" marked="project.projectDescription"></div>
                 <div class="row">
-                  <div class="col-md-offset-7 col-md-5">
+                  <div class="col-md-offset-4 col-md-8">
                     <div class="btn-group" role="group" aria-label="...">
-                      <button type="button" class="btn btn-danger">Unlike</button>
+                      <button type="button" class="btn btn-danger" ng-click="deleteProject(project._id)">Delete</button>
+                      <button type="button" class="btn btn-info">Edit</button>
                       <button type="button" class="btn btn-primary">Follow</button>
                       <button type="button" class="btn btn-success">Like</button>
                     </div>
                   </div>
-                </div>
+                </div> <br>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="alert alert-warning" role="alert" ng-hide="projectList.length">Sorry, there are no projects to view.</div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="panel panel-default">
-            <div class="panel-heading">My Awesome Project</div>
-            <div class="panel-body">
-              <div class="col-md-4">
-                <a href="#" class="thumbnail">
-                  <img src="http://placehold.it/300x200" alt="...">
-                </a>
-              </div>
-              <div class="col-md-8">
-                <div class="row well">This is a project description. everything will make sense here.</div>
-                <div class="row">
-                  <div class="col-md-offset-7 col-md-5">
-                    <div class="btn-group" role="group" aria-label="...">
-                      <button type="button" class="btn btn-danger">Unlike</button>
-                      <button type="button" class="btn btn-primary">Follow</button>
-                      <button type="button" class="btn btn-success">Like</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 

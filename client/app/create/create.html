@@ -1,4 +1,42 @@
-<div class="container">
+<div class="container" ng-controller="CreateCtrl">
+<script type="text/ng-template" id="descriptionTemplate.md">
+**port.ninja** allows you to find the perfect partners you need for the project you have in mind.
+
+We recommend outlining the basic purpose of your project and describing your ideal teammates.
+
+You can write the description for your project here using a nifty language called [markdown](https://daringfireball.net/projects/markdown/basics). And you can use this text as a format example.
+
+---
+
+My Awesome Project
+================
+
+We are looking for developers with the following characteristics.
+
+* Someone Dedicated
+* Likes Electronics
+* Wants to have fun
+
+This is an example of how you can do. *Italic*, **bold**, and `monospace`.
+
+> Block quotes are
+> written like so.
+>
+> They can span multiple paragraphs,
+> if you like.
+
+
+~~~
+var square = function (n) {
+return n * n;
+};
+~~~
+
+
+> Oh, and you can also use images in your description..
+
+![Shoulder view](http://i.imgur.com/7JrPvew.gif "Popover Text")
+</script>
 
   <div class="row">
     <div class="col-md-12">
@@ -11,23 +49,27 @@
       <div class="col-md-12">
         <div class="form-group">
           <label for="projectName">Project Name</label>
-          <input type="email" class="form-control" id="projectName" placeholder="My Awesome Project">
+          <input type="text" class="form-control" id="projectName" placeholder="My Awesome Project" ng-model="formData.projectName">
+        </div>
+        <div class="form-group">
+          <label for="mainImage">Main Image URL</label>
+          <input type="url" class="form-control" id="mainImage" placeholder="http://placehold.it/300x200" ng-model="formData.mainImage">
         </div>
       </div>
     </div>
 
     <div class="row well" id="editor">
       <div class="col-md-6">
-          <textarea class="form-control" rows="50" v-model="input" debounce="200"></textarea>
+          <textarea class="form-control" rows="50" ng-model="formData.projectDescription"></textarea>
       </div>
       <div class="col-md-6 ">
-        <div v-html="input | marked"></div>
+        <div marked="formData.projectDescription"></div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-4 col-md-offset-4">
-        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        <button type="submit" class="btn btn-primary btn-block" ng-click="submitForm(formData)">Submit</button>
       </div>
     </div>
 

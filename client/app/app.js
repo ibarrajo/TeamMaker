@@ -10,7 +10,8 @@ angular.module('hacksummitApp', [
   'btford.socket-io',
   'ui.router',
   'ui.bootstrap',
-  'validation.match'
+  'validation.match',
+  'hc.marked'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider
