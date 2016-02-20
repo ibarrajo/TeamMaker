@@ -8,11 +8,11 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 @import '../bower_components/bootstrap-social/bootstrap-social.scss';
 
 
-@import '../assets/css/bootstrap.css';
-
-
-@import '../assets/css/animate.min.css';
-@import '../assets/css/creative.css';
+// @import '../assets/css/bootstrap.css';
+//
+//
+@import '../assets/css/animate.min.scss';
+@import '../assets/css/creative.scss';
 
 
 /**
@@ -27,14 +27,14 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 }
 
 // Component styles are injected through grunt
-// notinjector
-// @import 'admin/admin.scss';
-// @import 'main/main.scss';
-// @import 'projects/projects.scss';
-// @import '../components/footer/footer.scss';
-// @import '../components/modal/modal.scss';
-// @import '../components/oauth-buttons/oauth-buttons.scss';
-// endinjector
+//injector
+@import 'admin/admin.scss';
+@import 'main/main.scss';
+@import 'projects/projects.scss';
+@import '../components/footer/footer.scss';
+@import '../components/modal/modal.scss';
+@import '../components/oauth-buttons/oauth-buttons.scss';
+//endinjector
 
 
 /*
