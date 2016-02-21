@@ -61,7 +61,8 @@ function handleError(res, statusCode) {
 
 // Gets a list of Projects
 export function index(req, res) {
-  Project.findAsync()
+  // sort by newest
+  Project.find().sort({date:-1}).execAsync()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }

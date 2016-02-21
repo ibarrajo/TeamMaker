@@ -6,6 +6,7 @@ var ProjectSchema = new mongoose.Schema({
   name: String,
   info: String,
   active: Boolean,
+  date: { type: Date, default: Date.now },
   projectName: String,
   mainImage: {type: String, default: 'http://placehold.it/300x200'},
   projectDescription: String,
