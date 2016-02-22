@@ -5,6 +5,10 @@ class NavbarController {
   menu = [{
     'title': 'Projects',
     'state': 'projects'
+  },
+  {
+    'title': 'Members',
+    'state': 'members'
   }
 ];
 
