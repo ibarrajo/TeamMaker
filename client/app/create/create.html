@@ -69,7 +69,8 @@ return n * n;
 
     <div class="row">
       <div class="col-md-4 col-md-offset-4">
-        <button type="submit" class="btn btn-primary btn-block" ng-click="submitForm(formData)">Submit</button>
+        <button type="submit" class="btn btn-primary btn-block" ng-click="submitForm(formData)" ng-if="formData._id">Update</button>
+        <button type="submit" class="btn btn-primary btn-block" ng-click="submitForm(formData)" ng-if="!formData._id">Submit</button>
       </div>
     </div>
 

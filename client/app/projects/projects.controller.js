@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('hacksummitApp')
-  .controller('ProjectsCtrl', function ($scope, $http) {
+  .controller('ProjectsCtrl', function ($scope, $http, $window) {
     $scope.projectList = [];
 
     // Load Projects
@@ -15,16 +15,20 @@ angular.module('hacksummitApp')
     };
 
     $scope.deleteProject = function (_id) {
-      $http.delete('/api/projects/' + _id).then(
-        function(res) {
-          $scope.loadProjects();
-          console.log('deleted ' + _id + ' successfully');
-        },
-        function(res) {
-          // @TODO this is where i would put my error case
-          // if I had any time to make it!
-        }
-      );
+      var confirm = $window.confirm('Are you absolutely sure you want to delete?');
+
+      if (confirm) {
+        $http.delete('/api/projects/' + _id).then(
+          function(res) {
+            $scope.loadProjects();
+            console.log('deleted ' + _id + ' successfully');
+          },
+          function(res) {
+            // @TODO this is where i would put my error case
+            // if I had any time to make it!
+          }
+        );
+      }
     };
 
 
